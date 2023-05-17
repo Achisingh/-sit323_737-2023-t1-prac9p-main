@@ -42,7 +42,7 @@ router.post(
 );
 
 router.put(
-  "/:id",
+  "/updateCourse/:id",
   async (req, res) => {
     try {
       const id =  parseInt(req.params.id);
@@ -61,7 +61,7 @@ router.put(
 );
 
 router.delete(
-  "/:id",
+  "/delete/:id",
   async (req, res) => {
     try {
       const id =  parseInt(req.params.id);

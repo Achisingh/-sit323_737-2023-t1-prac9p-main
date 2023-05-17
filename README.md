@@ -1,9 +1,5 @@
 # sit323-737-2023-t1-prac7p
 
-## Starting application
-
-Please not that the image `namanyash/sit323-737-2023-t1-prac9p:v16` for Kubernetes deployment has been pushed to DockerHub.
-
 ### Starting MongoDB
 
 Use the following commands to create the Kubernetes entities for MongoDB:
@@ -41,26 +37,27 @@ Start port forwarding for the service:
 
 test the following endpoints:
 
-POST `http://localhost:8000/db/addTask`
-
-- Requires "taskDetails" value.
-- Adds a task to the database.
-
-PUT `http://localhost:8000/db/updateTask`
-
-- Requires "id" and "taskDetails" value.
-- Updates the task with the provided id to the value provided for taskDetails
-
-GET `http://localhost:8000/db/getAllTasks`
+GET `http://localhost:8000/db/getCourses`
 
 - Gets all tasks from database
 
-GET `http://localhost:8000/db/getTask`
+GET `http://localhost:8000/db/getCourse`
 
 - Requires a value for "id"
 - Gets the task corresponding to the provided ID from database
 
-DELETE `http://localhost:8000/db/deleteTask`
+POST `http://localhost:8000/db/createCourse`
+
+- Requires "Course" value in Body.
+- Adds a course to the database.
+
+PUT `http://localhost:8000/db/updateCourse/:id`
+
+- Requires "id" and "Course" value in Body.
+- Updates the course with the provided id to the value provided for course
+
+
+DELETE `http://localhost:8000/db/delete/:id`
 
 - Requires a value for "id"
-- Deletes the task corresponding to the provided ID from database
+- Deletes the course corresponding to the provided ID in database
